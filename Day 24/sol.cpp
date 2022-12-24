@@ -19,6 +19,9 @@ class curr_s{
     }
 };
 
+int manhattan(int x1,int y1, int x2,int y2){
+    return abs(x1 - x2) + abs(y1 - y2);
+}
 
 void print(map<pair<int, int>, vector<char>> coords,vector<string> path){
     for (int i = 0; i < path.size(); i++){
@@ -99,7 +102,7 @@ int main(){
         auto [i, j, state_min] = q.front();
         q.pop();
         //cout << i << " " << j << endl;
-        if (state_min > min_min){
+        if (state_min + manhattan(i,j,path.size() - 1,path[i].size() - 2) > min_min){
             continue;
         }
         if (visited.find({i, j, state_min}) != visited.end()){
@@ -159,7 +162,7 @@ int main(){
         auto [i, j, state_min] = q.front();
         q.pop();
         //cout << i << " " << j << endl;
-        if (state_min > min_min2){
+        if (state_min + manhattan(i, j, 0, 1) > min_min2){
             continue;
         }
         if (visited.find({i, j, state_min}) != visited.end()){
@@ -218,7 +221,7 @@ int main(){
         auto [i, j, state_min] = q.front();
         q.pop();
         //cout << i << " " << j << endl;
-        if (state_min > min_min3){
+        if (state_min  + manhattan(i , j, path.size() - 1, path[i].size() - 2)> min_min3){
             continue;
         }
         if (visited.find({i, j, state_min}) != visited.end()){

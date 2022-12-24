@@ -134,7 +134,7 @@ int main(){
     /*
     About Part 2:
     Unfortunely I don't know how to detect cycle.
-    So I printed the delta heights in a.txt and found that the cycle by CTRL + F
+    So I printed the delta heights in a.txt and found the cycle by CTRL + F
     */
 
     string n_seq, r_seq;
